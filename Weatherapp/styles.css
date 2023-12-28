@@ -1,42 +1,56 @@
-/* Basic styling */
 body {
-    font-family: sans-serif;
-    background-color: #f0f0f0;
-  }
+  font-family: Arial, sans-serif;
+    /* background-color: #f0f0f0; */
+
+  background-image: url('https://images.pexels.com/photos/531756/pexels-photo-531756.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh; /* Set the height to fill the viewport */
+  margin: 0; /* Remove default margin */
+  padding: 0; 
+}
+
+.container {
+  max-width: 400px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.5); /* Set the background color to be transparent */
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Adjust the alpha value here for the box shadow transparency */
+  margin-top: 105px;
+}
+
+h1 {
+  font-size: 24px;
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
   
-  input[type="text"] {
-    width: 200px;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    margin-bottom: 10px;
-  }
-  
-  button {
-    background-color: #4CAF50;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  /* Weather information container */
-  .weather-info {
-    border: 1px solid #ccc;
-    padding: 20px;
-    border-radius: 5px;
-    margin-top: 20px;
-  }
-  
-  h2 {
-    font-size: 20px;
-    text-align: center;
-  }
-  
-  p {
-    margin-bottom: 10px;
-  }
-  
-  /* Additional styling for icons, responsiveness, etc. */
-  
+}
+#locationInput{
+  font-size: 22px;
+  font-weight: 500;
+  color: red;
+}
+button {
+  background-color: #007BFF;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.weather-info {
+  margin-top: 20px;
+}
+#location{
+  color:orange;
+}
