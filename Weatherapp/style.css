@@ -1,0 +1,42 @@
+/* Basic styling */
+body {
+    font-family: sans-serif;
+    background-color: #f0f0f0;
+  }
+  
+  input[type="text"] {
+    width: 200px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+  }
+  
+  button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  /* Weather information container */
+  .weather-info {
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 5px;
+    margin-top: 20px;
+  }
+  
+  h2 {
+    font-size: 20px;
+    text-align: center;
+  }
+  
+  p {
+    margin-bottom: 10px;
+  }
+  
+  /* Additional styling for icons, responsiveness, etc. */
+  
