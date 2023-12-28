@@ -3,36 +3,35 @@
 <head>
   <title>Weather Forecast App</title>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
-  <link rel="stylesheet" href="style.css"> </head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.6.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="styles.css"> </head>
 <body>
-  <div ng-controller="WeatherController">
-    <input type="text" ng-model="city" placeholder="Enter city name">
-    <button ng-click="search()">Get Weather</button>
-
-    <div ng-show="weatherData">
-      <h2>{{ weatherData.name }}</h2>
-      <p>Temperature: {{ weatherData.main.temp }}°C</p>
-      <p>Description: {{ weatherData.weather[0].description }}</p>
-    </div>
-
+    <div ng-controller="WeatherController" class="container">
+      <h1>Weather App</h1>
+      <input type="text" id="locationInput" ng-model="city" placeholder="Enter a city">
+      <button id="searchButton" ng-click="search()">Get Weather</button>
+      <div class="weather-info" ng-show="weatherData">
+          <h2 id="location">{{ weatherData.name }}</h2>
+          <p id="temperature">Temperature: {{ weatherData.main.temp }}°C / {{ (weatherData.main.temp - 32) * 5 / 9  }}°F</p>
+          <p id="description">Description: {{ weatherData.weather[0].description }} </p>
+      </div>
     <script>
-        angular.module('weatherApp')
-  .controller('WeatherController', function($scope, $http) {
-    $scope.search = function() {
-      var city = $scope.city;
-      var apiKey = 58d27b798389b53402ef41827f56f5fb; // Replace with your API key
-      var url = 'https://api.openweathermap.org/data/2.5/weather?q=' + city + '&appid=' + apiKey;
+      angular.module('weatherApp', [])
+        .controller('WeatherController', function($scope, $http) {
+          $scope.search = function() {
+            var city = $scope.city;
+            var apiKey = '58d27b798389b53402ef41827f56f5fb'; // Your API key
+            var url = 'https://api.openweathermap.org/data/2.5/weather?q=' + city + '&appid=' + apiKey + '&units=metric';
 
-      $http.get(url)
-        .then(function(response) {
-          $scope.weatherData = response.data;
-        })
-        .catch(function(error) {
-          console.error('Error fetching weather data:', error);
+            $http.get(url)
+              .then(function(response) {
+                $scope.weatherData = response.data;
+              })
+              .catch(function(error) {
+                console.error('Error fetching weather data:', error);
+              });
+          };
         });
-    };
-  });
-
     </script>
   </div>
 </body>
